@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <!-- Parent -->
+    <parent>
+        <groupId>org.jboss</groupId>
+        <artifactId>jboss-parent</artifactId>
+        <version>8</version>
+        <relativePath />
+    </parent>
+
+    <!-- Model Version -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Artifact Configuration -->
+    <groupId>org.jboss.arquillian.extension</groupId>
+    <artifactId>arquillian-warp-aggregator</artifactId>
+    <version>1.0.0.Alpha3</version>
+    <packaging>pom</packaging>
+
+    <name>Arquillian Warp: Parent</name>
+    <description>Taking tests from Client to the Server and back</description>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Lukas Fryc</name>
+            <email>lfryc@redhat.com</email>
+        </developer>
+    </developers>
+
+    <issueManagement>
+        <system>JIRA</system>
+        <url>https://issues.jboss.org/browse/ARQ/component/12315782</url>
+    </issueManagement>
+
+    <scm>
+        <connection>scm:git:git://git@github.com:arquillian/arquillian-extension-warp.git</connection>
+        <developerConnection>scm:git:ssh://github.com/arquillian/arquillian-extension-warp.git</developerConnection>
+        <url>git://github.com/arquillian/arquillian-extension-warp.git</url>
+    </scm>
+
+    <ciManagement>
+        <system>CloudBess</system>
+        <url>https://arquillian.ci.cloudbees.com/job/Arquillian-Extension-Warp/</url>
+    </ciManagement>
+
+    <properties>
+        <!-- Arquillian -->
+        <version.servlet_api>3.0.1</version.servlet_api>
+        <version.arquillian_core>1.0.3.Final</version.arquillian_core>
+        <version.arquillian_drone>1.1.0.Final</version.arquillian_drone>
+
+        <version.littleproxy>0.4</version.littleproxy>
+        <version.javassist>3.12.1.GA</version.javassist>
+
+        <!-- Tests -->
+        <version.junit>4.10</version.junit>
+        <version.mockito>1.9.0</version.mockito>
+        <version.shrinkwrap_resolver>2.0.0-alpha-1</version.shrinkwrap_resolver>
+        <version.jboss_spec>3.0.0.Final</version.jboss_spec>
+        <version.org.jboss.jbossas>7.1.1.Final</version.org.jboss.jbossas>
+
+        <!-- override from parent -->
+        <maven.compiler.argument.target>1.5</maven.compiler.argument.target>
+        <maven.compiler.argument.source>1.5</maven.compiler.argument.source>
+    </properties>
+
+    <modules>
+        <!-- build modules -->
+        <module>bom</module>
+        <module>build</module>
+        <module>build-resources</module>
+        
+        <!-- main modules -->
+        <module>api</module>
+        <module>spi</module>
+        <module>impl</module>
+        <module>ftest</module>
+
+        <!-- extensions -->
+        <module>extension/jsf</module>
+        <module>extension/jsf-ftest</module>
+        <module>arquillian-warp-depchain</module>
+    </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <pushChanges>false</pushChanges>
+                    <localCheckout>true</localCheckout>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
