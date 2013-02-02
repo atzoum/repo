@@ -3,11 +3,11 @@
   <groupId>org.jboss.arquillian.extension</groupId>
   <artifactId>arquillian-warp-jsf</artifactId>
   <versioning>
-    <release>1.0.0.Alpha3</release>
+    <release>1.0.0.Alpha4</release>
     <versions>
       <version>1.0.0.Alpha4</version>
       <version>1.0.0.Alpha3</version>
     </versions>
-    <lastUpdated>20130202112649</lastUpdated>
+    <lastUpdated>20130202160723</lastUpdated>
   </versioning>
 </metadata>
